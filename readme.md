@@ -83,8 +83,25 @@ Install `sudo pacman -S xterm`, cause that's the default for xmonad (so you can 
 8. Set a background. Install `sudo pacman -S feh`, and add `feh --bg-max /home/michael/Pictures/whatever.png &` to .xinitrc.
 9. Install `sudo pacman -S xsecurelock` (tried i3lock, but it was being flaky).
 
-## Install a GUI (Sway)
-1. Install `sudo pacman -S sway swaylock swayidle`. Copy the config file to `~/.config/sway/config`.
+## Install a GUI (i3 gaps)
+1. Install X11 `sudo pacman -S xorg-server xorg-xinit xorg-xsetroot`.
+2. Install `yay -S i3-gaps i3blocks`.
+3. Touch `.xinitrc`, which is the thing that'll run when you run `startx`. Write to it:
+```
+export WINIT_HIDPI_FACTOR=1.0    # keep alacritty font size consistent across resolutions
+udiskie &                        # start udiskie (install it first, see below)
+setxkbmap gb                     # set the keyboard layout for X
+xsetroot -cursor_name left_ptr & # Fix the weird X cursor
+autorandr -c                     # Set up displays _before_ setting the bar and wallpaper
+exec i3                          # start i3
+```
+4. Install the terminal that the i3 configuration is expecting. For alacritty it's just `sudo pacman -S alacritty`, and then copying your config to `~/.config/alacritty/alacritty.yml`.
+5. Install rofi `sudo pacman -S rofi`. Then copy your config to `~/.config/rofi/config`.
+6. Copy the i3blocks config to `~/.config/i3blocks/config`.
+7. Then copy over your config to `~/.config/i3/config`.
+8. Set a background. Install `sudo pacman -S feh`, and add `feh --bg-max /home/michael/Pictures/whatever.png &` to .xinitrc.
+9. Install `sudo pacman -S xsecurelock` (tried i3lock, but it was being flaky).
+10. Install `sudo pacman -S acpi sysstat wireless_tools` for the battery, cpu and network info.
 
 ## Pacman
 Some useful commands.
@@ -134,9 +151,7 @@ Inherits=breeze_cursors
 to it.
 
 ## Fonts
-https://github.com/jaagr/polybar/wiki/Fonts
-Update the below:
-`yay -S nerd-fonts` will install a bunch of them, 'patched' with icons (which makes them good for polybar). I don't currently understand how that works. This will include Source Code Pro.
+Source code pro will probably already be installed by something else. To get the patched version, install `yay -S nerd-fonts-source-code-pro` and specify `SauceCodePro Nerd Font Mono` instead.
 
 ## Displays (Xmonad)
 Install `sudo pacman -S xorg-xrandr` to configure displays and `yay -S autorandr` in order to save profiles, so it can switch automatically when you add/remove a monitor.

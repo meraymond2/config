@@ -1,0 +1,45 @@
+# https://github.com/vivien/i3blocks
+
+separator=false
+separator_block_width=5
+border_top=0
+border_left=0
+border_right=0
+border_bottom=2
+
+[cpu_usage]
+command=$HOME/.config/i3blocks/cpu_usage
+interval=10
+LABEL= 
+T_WARN=50
+T_CRIT=80
+DECIMALS=2
+border=#feae55
+
+[memory]
+command=$HOME/.config/i3blocks/memory
+label=
+interval=30
+border=#9ec400
+
+[wireless]
+label= 
+command=[[ -z "$(iwgetid -r)" ]] || echo " $(iwgetid -r) "
+interval=2
+border=#7a96da
+
+[batterybar]
+command=$HOME/.config/i3blocks/batterybar
+label= 
+interval=5
+markup=pango
+min_width=bat: ■■■■■
+border=#54ced6
+
+[time]
+label= 
+command=echo " `date +'%a %d %b'` <b>`date +'%T'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
+interval=1
+markup=pango
+border=#928374
+separator_block_width=0
