@@ -188,6 +188,9 @@ Copy over the config files to `~/config/sublime-text-3/Packages/User`.
 ### Emacs
 Not using it much, but it's good for Scheme. `sudo pacman -S emacs`, then install Doom emacs, and copy the config to ~/.doom.d/.
 
+### Atom
+Good for Idris.
+
 ## Languages
 ### asdf
 Using asdf for anything where I need multiple versions, or the ability to use an older version.
@@ -242,3 +245,15 @@ curl https://3e8.org/pub/chicken-doc/chicken-doc-repo-5.tgz | sudo tar zx
 ```
 
 The emacs config should have the necessary packages to work with it. There isn't really any Scheme integration in VSCode.
+
+### Idris
+Install `sudo pacman -S idris`.
+
+There is a VSCode plugin for Idris, but it's buggy and un-maintained. It might just be worth using Atom for it instead, because that works fine.
+
+### Rust
+Install `sudo pacman -S rustup`.
+To install rustfmt `rustup component add rustfmt --toolchain stable-x86_64-unknown-linux-gnu`.
+Other tools `rustup component add rls rust-analysis rust-src`.
+
+The Rust (rust-lang.rust) VSCode plugin is pretty good.
