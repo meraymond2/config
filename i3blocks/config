@@ -38,7 +38,7 @@ border=#54ced6
 
 [time]
 label= 
-command=echo " `date +'%a %d %b'` <b>`date +'%T'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
+command=echo " `date +'%F'` <b>`date +'%T'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
 interval=1
 markup=pango
 border=#928374
