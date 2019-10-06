@@ -83,6 +83,9 @@ Install `sudo pacman -S xterm`, cause that's the default for xmonad (so you can 
 8. Set a background. Install `sudo pacman -S feh`, and add `feh --bg-max /home/michael/Pictures/whatever.png &` to .xinitrc.
 9. Install `sudo pacman -S xsecurelock` (tried i3lock, but it was being flaky).
 
+## Install a GUI (Sway)
+1. Install `sudo pacman -S sway swaylock swayidle`. Copy the config file to `~/.config/sway/config`.
+
 ## Pacman
 Some useful commands.
 `sudo pacman -Syu` updates packages. This has the potentional to break stuff, so don't do it unless you have time to debug issues.
@@ -183,7 +186,7 @@ and others if they come up. I consistently try and fail to use ST as a code edit
 Copy over the config files to `~/config/sublime-text-3/Packages/User`.
 
 ### Emacs
-Not using it much, but it might come up. `sudo pacman -S emacs`, then install Doom emacs, and copy the config to ~/.doom.d/.
+Not using it much, but it's good for Scheme. `sudo pacman -S emacs`, then install Doom emacs, and copy the config to ~/.doom.d/.
 
 ## Languages
 ### asdf
@@ -220,3 +223,22 @@ For VSCode, install the Ruby (rebornix.ruby) extension.
 If using intellij, install Java 8 `sudo pacman -S jdk8-openjdk`, otherwise the more recent versions are ok `sudo pacman -S jdk-openjdk`. You’ll need to log out and log back in. Install lein by downloading the script, and putting it on your path, make it executable, and then run it.
 
 There is a repl extension for VSCode, Calva (betterthantomorrow.calva), but I've not had to use it yet, so I don't have the shortcuts set up.
+
+### Golang
+Install `sudo pacman -S go`, and set the global gopath var by adding `export GOPATH="$HOME/.go"` to your .zshrc file.
+
+When you install the VSCode go extension it will prompt you to install all of the tools that it needs.
+
+### Chicken Scheme
+Installing Chicken is just `sudo pacman -S chicken`, although note that the
+commands are prefixed with chicken-, so chicken-csi instead of csi.
+
+Install eggs to make dev easier. They enable not only the documentation, but also auto-completion in Emacs.
+```
+chicken-install -s apropos chicken-doc
+chicken-install -s srfi-18
+cd `chicken-csi -R chicken.platform -p '(chicken-home)'`
+curl https://3e8.org/pub/chicken-doc/chicken-doc-repo-5.tgz | sudo tar zx
+```
+
+The emacs config should have the necessary packages to work with it. There isn't really any Scheme integration in VSCode.
