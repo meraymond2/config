@@ -222,7 +222,7 @@ For VSCode, install the Ruby (rebornix.ruby) extension.
 ### Clojure
 If using intellij, install Java 8 `sudo pacman -S jdk8-openjdk`, otherwise the more recent versions are ok `sudo pacman -S jdk-openjdk`. You’ll need to log out and log back in. Install lein by downloading the script, and putting it on your path, make it executable, and then run it.
 
-There is a repl extension for VSCode, Calva (betterthantomorrow.calva), but I've not had to use it yet, so I don't have the shortcuts set up.
+There is a repl extension for VSCode, Calva (betterthantomorrow.calva). I've started adding key mappings for it.
 
 ### Golang
 Install `sudo pacman -S go`, and set the global gopath var by adding `export GOPATH="$HOME/.go"` to your .zshrc file.
