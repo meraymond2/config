@@ -1,0 +1,11 @@
+[pull]
+	rebase = true
+[diff]
+	tool = meld
+[user]
+	email = raymond.michael@gmail.com
+	name = Michael Raymond
+[core]
+	askPass = 
+	excludesfiles = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global

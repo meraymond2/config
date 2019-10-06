@@ -1,0 +1,45 @@
+# Colours
+light_green=49
+turquoise=37
+red=203
+blue=81
+
+function prompt_michael_precmd {
+  # Replace '/home/<user>' with '~'.
+  _prompt_michael_pwd="${PWD/#$HOME/~}"
+
+  # Get Git repository information.
+  git-info
+
+}
+
+function prompt_michael_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent sp subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+
+  # Add hook to set up prompt parameters before each command.
+  add-zsh-hook precmd prompt_michael_precmd
+
+  # Set editor-info parameters.
+  # Where are these used?
+  zstyle ':prezto:module:editor:info:completing' format '%F{magenta}...%f'
+  zstyle ':prezto:module:editor:info:keymap:alternate' format '%F{magenta}--- COMMAND ---%f'
+
+  # Set vcs_info parameters.
+  zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:dirty' format "%F{$red} (%D)%f%"
+  zstyle ':prezto:module:git:info:clean' format " %F{$light_green}✓%f"
+  zstyle ':prezto:module:git:info:branch' format "%F{$blue}[%b]%f"
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '' 'rprompt' '%b%C%D'
+
+  # Define prompts.
+  PROMPT='%F{$turquoise}${_prompt_michael_pwd}%f %B%F{$light_green}>>%f%b '
+  RPROMPT='${git_info:+${(e)git_info[rprompt]}} '
+  SPROMPT='zsh: correct %F{$red}%R%f to %F{$light_green}%r%f [nyae]? '
+}
+
+prompt_michael_setup "$@"

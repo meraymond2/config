@@ -1,0 +1,11 @@
+[/]
+custom-font='Source Code Pro 14'
+folder-status-filters=['normal', 'normal', 'new', 'modified']
+style-scheme='meld-dark'
+use-system-font=false
+vc-status-filters=['flatten', 'modified']
+wrap-mode='none'
+
+[window-state]
+height=675
+width=937

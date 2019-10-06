@@ -1,0 +1,12 @@
+[
+ { "keys": ["alt+shift+f"], "command": "js_prettier" },
+ { "keys": ["alt+shift+d"], "command": "typescript_go_to_definition"},
+ { "keys": ["alt+shift+r"], "command": "typescript_rename"},
+ { "keys": ["alt+shift+q"], "command": "typescript_quick_info_doc"},
+ { "keys": ["alt+shift+x"], "command": "typescript_find_references"},
+
+
+ { "keys": ["ctrl+alt+w"], "command": "close_other_tabs"},
+ { "keys": ["ctrl+w"], "command": "close_file"},
+ { "keys": ["ctrl+shift+o"], "command": "prompt_open_folder"}
+]
