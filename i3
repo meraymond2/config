@@ -121,6 +121,9 @@ bindsym $mod+minus scratchpad show
 # lock the screen
 bindsym $mod+BackSpace exec xsecurelock
 
+# take a screenshot
+bindsym $mod+Print exec scrot
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
