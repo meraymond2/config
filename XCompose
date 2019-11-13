@@ -1,0 +1,14 @@
+include "%L"   # import the default Compose file for your locale
+
+<Multi_key> <a> <n> <d>      : "∧"
+<Multi_key> <A> <exclam>     : "∀"
+<Multi_key> <e> <exclam>     : "∈"
+<Multi_key> <E> <exclam>     : "∃"
+<Multi_key> <i> <f> <f>      : "⟺"
+<Multi_key> <l> <exclam>     : "λ"
+<Multi_key> <N> <exclam>     : "ℕ"
+<Multi_key> <o> <r>          : "∨"
+<Multi_key> <q> <e> <d>      : "∎"
+<Multi_key> <R> <exclam>     : "ℝ"
+<Multi_key> <S> <exclam>     : "Σ"
+<Multi_key> <Z> <exclam>     : "ℤ"
