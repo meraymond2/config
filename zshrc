@@ -54,7 +54,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.work-stuff" ]]; then
   source "${ZDOTDIR:-$HOME}/.work-stuff"
 fi
 
-export EDITOR=nano
+export EDITOR=nvim
 
 export GOPATH="$HOME/.go"
-export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.npm-global/bin:$GOPATH/bin:$PATH
+
+alias snow="mpv ~/Videos/snow.mp4 --wid=0 --no-audio --loop &"
