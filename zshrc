@@ -14,6 +14,7 @@ fi
 alias st="subl"
 alias st.="subl ."
 alias code.="code ."
+alias vs="code . && exit"
 alias lock="xtrlock"
 alias zshconfig="sublime3 ~/.zshrc ~/.zpreztorc"
 alias dev="cd ~/dev"
