@@ -7,6 +7,7 @@ include "%L"   # import the default Compose file for your locale
 <Multi_key> <i> <f> <f>      : "⟺"
 <Multi_key> <l> <a> <m>      : "λ"
 <Multi_key> <n> <a> <t>      : "ℕ"
+<Multi_key> <n> <o> <t>      : "¬"
 <Multi_key> <o> <r>          : "∨"
 <Multi_key> <q> <e> <d>      : "∎"
 <Multi_key> <r> <e> <a> <l>  : "ℝ"
