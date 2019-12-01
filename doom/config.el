@@ -52,12 +52,15 @@
 (add-hook 'clojure-mode-hook
           (lambda ()
             (smartparens-strict-mode)
-            (global-set-key (kbd "M-L")
-                            'cider-format-buffer)
-            (global-set-key (kbd "C-c C-z")
-                            'cider-jack-in)
-            (global-set-key (kbd "C-c C-b")
-                            'cider-load-buffer)
+            (map! :leader :nv
+                  "j"
+                  nil
+                  (:prefix "j"
+                    :n "f" #'cider-format-buffer
+                    :n "i" #'cider-jack-in
+                    :n "l" #'cider-load-buffer
+                    :n "n" #'cider-repl-set-ns
+                    ))
             (global-set-key (kbd "C-M-<right>")
                             'sp-forward-slurp-sexp)
             (global-set-key (kbd "C-M-<left>")
