@@ -6,12 +6,16 @@
 (require 'geiser)
 (require 'lsp-mode)
 
-;; Set font globally
+;; Set style globally
+(load-theme 'doom-wilmersdorf t)
 (set-face-font 'default "Source Code Pro-13")
+;(set-face-font 'treemacs-root-face "Source Code Variable-12")
+;(set-face-font 'treemacs-directory-face "Source Code Variable-12")
+;(set-face-font 'treemacs-file-face "Source Code Variable-12")
 
-;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;
 ;; Chicken ;;
-;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;
 (set-variable (quote scheme-program-name)
               "chicken-csi")
 (setq geiser-chicken-binary "chicken-csi")
@@ -51,6 +55,10 @@
 
 (add-hook 'clojure-mode-hook
           (lambda ()
+            ;(setq clojure-align-forms-automatically t)
+            ;(define-clojure-indent
+            ;  (require '(2))
+            ;  (implement '(3 (2))))
             (smartparens-strict-mode)
             (map! :leader :nv
                   "j"
@@ -126,6 +134,9 @@
     (when (and prettier (file-executable-p prettier))
       (setq-local prettier-js-command prettier))))
 
+;;;;;;;;;;;;;;;;
+;; TypeScript ;;
+;;;;;;;;;;;;;;;;
 (add-hook 'typescript-mode-hook
           (lambda ()
             (map! :leader :nv
