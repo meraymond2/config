@@ -16,8 +16,13 @@
 (setq backup-directory-alist
   `(("." . ,(concat user-emacs-directory "backups"))))
 
-;; Show whitespace
-(global-whitespace-mode)
+;; Make tabs display as two spaces
+(setq-default tab-width 2)
+
+;; Wrap lines sensibly, not in the middle of words
+(global-visual-line-mode t)
+
+;; Set which whitespace to display
 (setq whitespace-style 
 	  '(face 
 	  	tabs 

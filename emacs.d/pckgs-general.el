@@ -1,30 +1,3 @@
-;; Allows installing of packages from Melpa
-;; http://melpa.org/#/getting-started
-(require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  (when no-ssl
-    (warn "\
-Your version of Emacs does not support SSL connections,
-which is unsafe because it allows man-in-the-middle attacks.
-There are two things you can do about this warning:
-1. Install an Emacs version that does support SSL and be safe.
-2. Remove this warning from your init file so you won't see it again."))
-  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
-
-;; https://github.com/jwiegley/use-package for documentation
-;; The first time emacs is loaded, this must be installed manually
-;; with `package-refresh-contents`, `package-install`, `use-package`
-;; then restart.
-(eval-when-compile
-  (require 'use-package))
 
 (use-package ivy
   :ensure t
@@ -35,3 +8,34 @@ There are two things you can do about this warning:
   :ensure t
   :config
   (global-set-key (kbd "C-s") 'swiper))
+
+(use-package hydra
+  :ensure t)
+
+(defun init-smartparens
+  ()
+  (smartparens-strict-mode)
+  (local-set-key (kbd "C-M-<right>") 'sp-forward-slurp-sexp)
+  (local-set-key (kbd "C-M-<left>") 'sp-backward-slurp-sexp)
+  (local-set-key (kbd "C-M-<up>") 'sp-backward-barf-sexp)
+  (local-set-key (kbd "C-M-<down>") 'sp-forward-barf-sexp))
+
+(use-package smartparens
+  :ensure t
+  :init
+  (add-hook 'emacs-lisp-mode-hook 'init-smartparens)
+  (add-hook 'clojure-mode-hook 'init-smartparens)
+  (add-hook 'cider-repl-mode-hook 'init-smartparens)
+  (add-hook 'clojurec-mode-hook 'init-smartparens)
+  (add-hook 'clojurescript-mode-hook 'init-smartparens))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  ;; Nice to have the option, not sure about enabling by default
+  ; (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+  ; (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+  ; (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+  ; (add-hook 'clojurec-mode-hook 'rainbow-delimiters-mode)
+  ; (add-hook 'clojurescript-mode-hook 'rainbow-delimiters-mode)
+  )
