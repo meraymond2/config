@@ -57,6 +57,16 @@ fi
 
 export EDITOR=nvim
 
+export EDITOR="emacsclient -t"                  # $EDITOR opens in terminal
+
+function em() {
+	emacsclient -c "$@" &
+}
+
+function emx() {
+    emacsclient -c "$@" & exit
+}
+
 export GOPATH="$HOME/.go"
 export PATH=~/.npm-global/bin:$GOPATH/bin:$PATH
 
