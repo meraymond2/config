@@ -1,21 +1,18 @@
 # To Do
 Install projectile.
 Install whichkey
-Either save on blur, or display unsaved buffers?
+Install treemacs
+Either save on blur, or display unsaved buffers in a more obvious way?
 
 ## UI
 Change font for non-editor buffers?
-Get rid of the scrollbar on the right.
 Top padding would be nice.
 Make the bar less hideous.
-Fix company mode whitespace faces.
 
 ## Menu
 Play with Ivy settings, try to fix sort-order.
 Ivy faces.
-
-## Keybindings
-Install Hydra. It would be nice to have those on top of the default key-bindings, I'd like to leave those in place as much as possible.
+Swiper faces.
 
 ## Editing
 Multiple cursors package.
@@ -38,9 +35,6 @@ Pull out settings that only apply to dev-buffers (rm-trailing-whitespace, add-ne
 ## Markdown
 Faces.
 
-## Documentation
-Start writing down some shortcuts? or figure out how to quickly view them. I don't know how to use dired.
-
 ## Done
 Make trailing spaces change the foreground, not background colour. 
 Get rid of the line-wrapping chars.
@@ -50,3 +44,6 @@ Enable this thing: https://www.gnu.org/software/emacs/manual/html_node/efaq/Repl
 Don't allow wrapping in the middle of a word.
 Change the theme to make the whitespace marks only visible for leading/trailing whitespace, if possible. UPDATE: not possible, at least not easily
 Shrink text a point or two.
+Get rid of the scrollbar on the right.
+Fix company mode whitespace faces. (not perfect but good enough)
+Install Hydra. It would be nice to have those on top of the default key-bindings, I'd like to leave those in place as much as possible.

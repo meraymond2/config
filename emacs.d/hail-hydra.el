@@ -23,7 +23,9 @@
 
 (defhydra hydra-c ()
   "C hydra"
-  ("f" lsp-format-buffer "Format C buffer"))
+  ("f" lsp-format-buffer "Format C buffer")
+  ("g" lsp-find-definition "Go to definition")
+  )
 
 (defun hydra-by-major-mode ()
   (interactive)

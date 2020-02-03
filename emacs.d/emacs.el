@@ -4,6 +4,9 @@
 ;; Remove the tool bar
 (setq tool-bar-mode nil)
 
+;; Remove the scroll bars
+(setq scroll-bar-mode nil)
+
 ;; Show line numbers
 (global-linum-mode)
 
@@ -23,18 +26,18 @@
 (global-visual-line-mode t)
 
 ;; Set which whitespace to display
-(setq whitespace-style 
-	  '(face 
-	  	tabs 
-	  	spaces 
-	  	trailing 
-	  	lines 
-	  	space-before-tab 
-	  	newline 
-	  	indentation 
-	  	; empty 
-	  	space-after-tab 
-	  	space-mark 
-	  	tab-mark 
+(setq whitespace-style
+	  '(face
+	  	tabs
+	  	spaces
+	  	trailing
+	  	lines
+	  	space-before-tab
+	  	newline
+	  	indentation
+	  	; empty
+	  	space-after-tab
+	  	space-mark
+	  	tab-mark
 	  	; newline-mark
 	  	))

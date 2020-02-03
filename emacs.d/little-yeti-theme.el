@@ -83,11 +83,13 @@
 	`(font-lock-constant-face ((,class (:foreground nil, :slant italic))))
 	;;; C: Preprocessor statements, such as #include
 	`(font-lock-preprocessor-face ((,class (:foreground ,green))))
+	;;;; ! negation symbols
+	`(font-lock-negation-char-face ((,class (nil))))
+	;;;; C: Unmatched quotes
+	`(font-lock-warning-face ((,class (:underline (:color ,red)))))
 	;;.......
-	`(font-lock-negation-char-face ((,class (:background ,unknown :foreground ,unknown))))
 	`(font-lock-regexp-grouping-backslash ((,class (:background ,unknown :foreground ,unknown))))
 	`(font-lock-regexp-grouping-construct ((,class (:background ,unknown :foreground ,unknown))))
-	`(font-lock-warning-face ((,class (:background ,unknown :foreground ,unknown))))
 
 	;; Clojure
 	`(clojure-character-face ((,class (:foreground ,golden))))
@@ -168,7 +170,10 @@
 	;;; Right char if scrolling
 	`(company-scrollbar-bg ((,class (:background ,medium-gray :foreground ,medium-gray))))
 	`(company-scrollbar-fg ((,class (:background ,medium-light-gray :foreground ,medium-light-gray))))
-
+	;;; C: Additional information about the symbol to insert
+	`(company-tooltip-annotation ((,class (:foreground ,turquoise))))
+	`(company-tooltip-annotation-selection ((,class (:foreground ,turquoise))))
+	
 	;;; .........
 	`(company-echo ((,class (:background ,unknown :foreground ,temp))))
 	`(company-echo-common ((,class (:background ,unknown :foreground ,temp))))
@@ -176,8 +181,6 @@
 	`(company-preview-common ((,class (:background ,unknown :foreground ,temp))))
 	`(company-preview-search ((,class (:background ,unknown :foreground ,temp))))
 	`(company-template-field ((,class (:background ,unknown :foreground ,temp))))
-	`(company-tooltip-annotation ((,class (:background ,unknown :foreground ,temp))))
-	`(company-tooltip-annotation-selection ((,class (:background ,unknown :foreground ,temp))))
 	`(company-tooltip-search ((,class (:background ,unknown :foreground ,temp))))
 	`(company-tooltip-search-selection ((,class (:background ,unknown :foreground ,temp))))
 
