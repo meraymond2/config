@@ -39,3 +39,7 @@
   ; (add-hook 'clojurec-mode-hook 'rainbow-delimiters-mode)
   ; (add-hook 'clojurescript-mode-hook 'rainbow-delimiters-mode)
   )
+
+(use-package dockerfile-mode
+	:ensure t
+	:mode ("Dockerfile\\'" . dockerfile-mode))

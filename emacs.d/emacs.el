@@ -1,11 +1,11 @@
 ;; Remove the menu bar
-(setq menu-bar-mode nil)
+(menu-bar-mode -1)
 
 ;; Remove the tool bar
-(setq tool-bar-mode nil)
+(tool-bar-mode -1)
 
 ;; Remove the scroll bars
-(setq scroll-bar-mode nil)
+(scroll-bar-mode -1)
 
 ;; Show line numbers
 (global-linum-mode)
