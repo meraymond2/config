@@ -31,7 +31,7 @@
 
 (use-package rainbow-delimiters
   :ensure t
-  :init
+  ; :init
   ;; Nice to have the option, not sure about enabling by default
   ; (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
   ; (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -43,3 +43,16 @@
 (use-package dockerfile-mode
 	:ensure t
 	:mode ("Dockerfile\\'" . dockerfile-mode))
+
+(use-package projectile
+  :ensure t
+  :init 
+  (projectile-mode 1)
+  (define-key projectile-mode-map (kbd "M-SPC p") 'projectile-command-map)
+  (setq projectile-completion-system 'ivy)
+  )
+
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode 1))

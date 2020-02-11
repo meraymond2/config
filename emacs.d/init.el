@@ -40,6 +40,9 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Unset unused shortcut so I can use M-SPC as a prefix key.
+(global-set-key (kbd "M-SPC") nil)
+
 (load "~/.emacs.d/emacs.el")
 (load "~/.emacs.d/hail-hydra.el")
 (load "~/.emacs.d/pckgs-general.el")

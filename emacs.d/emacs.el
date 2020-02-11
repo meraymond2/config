@@ -1,3 +1,6 @@
+;; Don’t show the welcome screen
+(setq inhibit-startup-screen t)
+
 ;; Remove the menu bar
 (menu-bar-mode -1)
 
@@ -14,10 +17,9 @@
 ;; Make the cursor a line rather than a box
 (setq-default cursor-type 'bar)
 
-;; Move all backups to a single location, rather
-;; than littering the working dirs
-(setq backup-directory-alist
-  `(("." . ,(concat user-emacs-directory "backups"))))
+;; Disable backups and autosaves
+(setq backup-inhibited t)
+(setq auto-save-default nil)
 
 ;; Make tabs display as two spaces
 (setq-default tab-width 2)

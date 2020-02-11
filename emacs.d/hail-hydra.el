@@ -39,4 +39,24 @@
     (t
      (error "%S not supported" major-mode))))
 
-(global-set-key (kbd "C-j") 'hydra-by-major-mode)
+(global-set-key (kbd "M-SPC j") 'hydra-by-major-mode)
+
+(defhydra hydra-window (global-map "M-SPC w")
+  "Window hydra"
+  ("f" other-window         "other-window")
+  ("w" delete-window        "delete-window")
+  ("W" delete-other-windows "delete-other-windows")
+
+  ("h" windmove-left  "windmove-left")
+  ("j" windmove-down  "windmove-down")
+  ("k" windmove-up    "windmove-up")
+  ("l" windmove-right "windmove-right")
+
+  ("H" shrink-window-horizontally  "shrink-window-horizontally")
+  ("J" shrink-window               "shrink-window")
+  ("K" enlarge-window              "enlarge-window")
+  ("L" enlarge-window-horizontally "enlarge-window-horizontally")
+  
+  ("2" split-window-below "split-window-below")
+  ("3" split-window-right "split-window-right")
+  )
