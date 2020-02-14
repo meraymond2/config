@@ -100,7 +100,7 @@
 	`(lsp-face-highlight-textual ((,class (nil))))
 	;;; Highlights where the symbol is being read in the code (C).
 	`(lsp-face-highlight-read ((,class (:underline (:color ,blue)))))
-	;;; Highlights symbols being written to, it seems to highlight 
+	;;; Highlights symbols being written to, it seems to highlight
 	;;; mutation/reassignment of the symbol under the pointer, in C
 	`(lsp-face-highlight-write ((,class (:underline (:color ,red)))))
 
@@ -141,15 +141,15 @@
 	`(sp-wrap-tag-overlay-face ((,class (:background ,unknown :foreground ,unknown))))
 
 	;; Rainbow Parens
-	`(rainbow-delimiters-depth-1-face ((,class (:foreground ,light-gray))))
-	`(rainbow-delimiters-depth-2-face ((,class (:foreground ,golden))))
+	`(rainbow-delimiters-depth-1-face ((,class (:foreground ,blue))))
+	`(rainbow-delimiters-depth-2-face ((,class (:foreground ,purple))))
 	`(rainbow-delimiters-depth-3-face ((,class (:foreground ,green))))
-	`(rainbow-delimiters-depth-4-face ((,class (:foreground ,red))))
+	`(rainbow-delimiters-depth-4-face ((,class (:foreground ,blue))))
 	`(rainbow-delimiters-depth-5-face ((,class (:foreground ,purple))))
-	`(rainbow-delimiters-depth-6-face ((,class (:foreground ,turquoise))))
+	`(rainbow-delimiters-depth-6-face ((,class (:foreground ,green))))
 	`(rainbow-delimiters-depth-7-face ((,class (:foreground ,blue))))
-	`(rainbow-delimiters-depth-8-face ((,class (:foreground ,golden))))
-	`(rainbow-delimiters-depth-9-face ((,class (:foreground ,red))))
+	`(rainbow-delimiters-depth-8-face ((,class (:foreground ,purple))))
+	`(rainbow-delimiters-depth-9-face ((,class (:foreground ,green))))
 
 	;; Flymake
 	`(flymake-error ((,class (:underline (:style wave :color ,red)))))
@@ -173,7 +173,7 @@
 	;;; C: Additional information about the symbol to insert
 	`(company-tooltip-annotation ((,class (:foreground ,turquoise))))
 	`(company-tooltip-annotation-selection ((,class (:foreground ,turquoise))))
-	
+
 	;;; .........
 	`(company-echo ((,class (:background ,unknown :foreground ,temp))))
 	`(company-echo-common ((,class (:background ,unknown :foreground ,temp))))

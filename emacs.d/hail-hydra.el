@@ -3,13 +3,15 @@
 
 (defhydra hydra-clojure ()
   "Clojure hydra"
-  ("b" clojure-align "Balance Clj expression")
+  ("b" clojure-align "Balance expression")
   ("c" cider-repl-clear-buffer "Clear Repl")
+  ("d" cider-doc "Show documentation")
   ("f" (clojure-fmt-buffer) "Format Clj buffer")
   ("g" (cider-find-var) "Go to definition")
   ("i" cider-jack-in "Start Repl" :exit t)
   ("l" cider-load-buffer "Load the current buffer")
-  ("q" cider-doc "Show documentation")
+  ("n" cider-repl-set-ns "Set the repl to the current ns")
+  ("p" rainbow-delimiters-mode "Toggle rainbow parens")
   ("r" cider-ns-refresh "Refresh ns")
   ("t" cider-test-run-ns-tests "Run tests in ns")
   )
@@ -47,16 +49,17 @@
   ("w" delete-window        "delete-window")
   ("W" delete-other-windows "delete-other-windows")
 
-  ("h" windmove-left  "windmove-left")
-  ("j" windmove-down  "windmove-down")
-  ("k" windmove-up    "windmove-up")
-  ("l" windmove-right "windmove-right")
+  ;; Movement keys based on i3, not vim
+  ("j" windmove-left  "windmove-left")
+  ("k" windmove-down  "windmove-down")
+  ("l" windmove-up    "windmove-up")
+  (";" windmove-right "windmove-right")
 
-  ("H" shrink-window-horizontally  "shrink-window-horizontally")
-  ("J" shrink-window               "shrink-window")
-  ("K" enlarge-window              "enlarge-window")
-  ("L" enlarge-window-horizontally "enlarge-window-horizontally")
-  
+  ("J" shrink-window-horizontally  "shrink-window-horizontally")
+  ("K" shrink-window               "shrink-window")
+  ("L" enlarge-window              "enlarge-window")
+  (":" enlarge-window-horizontally "enlarge-window-horizontally")
+
   ("2" split-window-below "split-window-below")
   ("3" split-window-right "split-window-right")
   )
