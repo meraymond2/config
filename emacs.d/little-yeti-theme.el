@@ -1,12 +1,16 @@
-(defconst dark-gray "#222222")
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Face-Attributes.html
+
+(defconst darker-gray "#222222")
+(defconst dark-gray "#2b2b2b")
 (defconst medium-gray "#383838")
 (defconst medium-light-gray "#555555")
 (defconst light-gray "#bbbbbb")
 
-(defconst blue "#5fd7ff")
-(defconst golden "#e5c07b")
-(defconst green "#00ffaf")
 (defconst red "#e06c75")
+(defconst orange "#e59400")
+(defconst golden "#e5c07b")
+(defconst green "#00ddad")
+(defconst blue "#47B5E7")
 (defconst purple "#b77ee0")
 (defconst turquoise "#00afaf")
 
@@ -25,6 +29,8 @@
     `(region ((,class (:background ,medium-gray :distant-foreground ,dark-gray))))
     ;;; Hover face
     `(highlight ((,class (:background ,medium-gray :distant-foreground ,dark-gray))))
+    ;;; Current line face
+    `(hl-line ((,class (:background ,darker-gray))))
     ;;; Current paren and match face
     `(show-paren-match ((,class (:background ,medium-light-gray))))
     `(show-paren-mismatch ((,class (:background nil :foreground ,red))))
@@ -50,6 +56,25 @@
 	`(whitespace-hspace ((,class (:background ,unknown :foreground ,unknown))))
 	`(whitespace-newline ((,class (:background ,unknown :foreground ,unknown))))
 
+	;; Mini-buffer
+	`(minibuffer-prompt ((,class (:height 100))))
+
+	;; Linum/Fring
+	;;; Linum numbers
+	`(linum ((,class (:foreground ,medium-light-gray :height 100))))
+	;;; Linum padding
+	`(linum-padding ((,class (:background ,dark-gray :foreground ,dark-gray))))
+	;;; Fringe colour
+	`(fringe ((,class (:background ,medium-gray))))
+
+	;; Modeline
+	`(mode-line ((,class (:background ,dark-gray :height 100 :box (:color ,light-gray)))))
+	`(mode-line-buffer-id ((,class (:foreground ,blue))))
+	`(mode-line-inactive ((,class (:background ,dark-gray :height 100 :box (:color ,medium-gray)))))
+
+	`(mode-line-emphasis ((,class (:background ,unknown))))
+	`(mode-line-highlight ((,class (:background ,unknown))))
+
 	;; General Code
 	;;; Comment marker, e.g. ;; or //
 	`(font-lock-comment-delimiter-face ((,class (:foreground ,medium-light-gray :slant italic))))
@@ -65,7 +90,7 @@
 	`(font-lock-string-face ((,class (:foreground ,golden))))
 	;;; Clojure: ns name and package in package/func
 	;;; Go/Zig: type names in declarations and arguments
-	`(font-lock-type-face ((,class (:foreground ,red))))
+	`(font-lock-type-face ((,class (:foreground ,turquoise))))
 	;;; Clojure: names of def variables, not let though
 	;;; Go: variables names, only in declarations using var or :=
 	;;; Zig: variables names, only in declarations using var or :=
@@ -76,7 +101,7 @@
 	`(font-lock-builtin-face ((,class (:foreground ,green))))
 	;;; Clojure: docstrings
 	;;; Zig: /// docstrings
-	`(font-lock-doc-face ((,class (:foreground ,blue :slant italic))))
+	`(font-lock-doc-face ((,class (:foreground ,medium-light-gray :slant italic))))
 	;;; Clojure: true/false
 	;;; Go, true/false, nil, and key-names when building, not defining, structs
 	;;; Zig: undefined and null, true/false
@@ -184,6 +209,57 @@
 	`(company-tooltip-search ((,class (:background ,unknown :foreground ,temp))))
 	`(company-tooltip-search-selection ((,class (:background ,unknown :foreground ,temp))))
 
+	;; Markdown
+	`(markdown-bold-face ((,class (:foreground ,blue :weight extra-bold))))
+	`(markdown-code-face ((,class (:background ,darker-gray))))
+	;;; # at beginning of header line
+	`(markdown-header-delimiter-face ((,class (:foreground ,red))))
+	`(markdown-header-face-1 ((,class (:foreground ,red :weight extra-bold))))
+	`(markdown-header-face-2 ((,class (:foreground ,red :weight extra-bold))))
+	`(markdown-header-face-3 ((,class (:foreground ,red :weight extra-bold))))
+	`(markdown-header-face-4 ((,class (:foreground ,red :weight extra-bold))))
+	`(markdown-header-face-5 ((,class (:foreground ,red :weight extra-bold))))
+	`(markdown-header-face-6 ((,class (:foreground ,red :weight extra-bold))))
+	`(markdown-inline-code-face ((,class (:foreground ,green :background ,darker-gray))))
+	`(markdown-italic-face ((,class (:foreground ,blue :slant italic))))
+	;;; Name of language before code blocks
+	`(markdown-language-keyword-face ((,class (:foreground ,blue))))
+	;;; List numbers
+	`(markdown-list-face ((,class (:foreground ,blue))))
+	;;; Delimiter symbols, `_*
+	`(markdown-markup-face ((,class (:foreground ,blue))))
+	;;; It mistakenly assigns some text this face
+	`(markdown-metadata-value-face ((,class (:foreground ,nil))))
+	;;; Code in code blocks
+	`(markdown-pre-face ((,class (:foreground ,green))))
+
+	;;;...
+	`(markdown-blockquote-face ((,class (:foreground ,unknown))))
+	`(markdown-comment-face ((,class (:foreground ,unknown))))
+	`(markdown-footnote-marker-face ((,class (:foreground ,unknown))))
+	`(markdown-footnote-text-face ((,class (:foreground ,unknown))))
+	`(markdown-gfm-checkbox-face ((,class (:foreground ,unknown))))
+	`(markdown-header-face ((,class (:foreground ,unknown))))
+	`(markdown-header-rule-face ((,class (:foreground ,unknown))))
+	`(markdown-highlight-face ((,class (:foreground ,unknown))))
+	`(markdown-hr-face ((,class (:foreground ,unknown))))
+	`(markdown-html-attr-name-face ((,class (:foreground ,unknown))))
+	`(markdown-html-attr-value-face ((,class (:foreground ,unknown))))
+	`(markdown-html-entity-face ((,class (:foreground ,unknown))))
+	`(markdown-html-tag-delimiter-face ((,class (:foreground ,unknown))))
+	`(markdown-html-tag-name-face ((,class (:foreground ,unknown))))
+	`(markdown-language-info-face ((,class (:foreground ,unknown))))
+	`(markdown-line-break-face ((,class (:foreground ,unknown))))
+	`(markdown-link-face ((,class (:foreground ,unknown))))
+	`(markdown-link-title-face ((,class (:foreground ,unknown))))
+	`(markdown-math-face ((,class (:foreground ,unknown))))
+	`(markdown-metadata-key-face ((,class (:foreground ,unknown))))
+	`(markdown-missing-link-face ((,class (:foreground ,unknown))))
+	`(markdown-plain-url-face ((,class (:foreground ,unknown))))
+	`(markdown-reference-face ((,class (:foreground ,unknown))))
+	`(markdown-strike-through-face ((,class (:foreground ,unknown))))
+	`(markdown-table-face ((,class (:foreground ,unknown))))
+	`(markdown-url-face ((,class (:foreground ,unknown))))
   )
 )
 

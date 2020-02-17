@@ -36,6 +36,8 @@
       (hydra-c/body))
     (clojure-mode
      (hydra-clojure/body))
+    (cider-repl-mode
+      (hydra-clojure/body))
     (go-mode
      (hydra-go/body))
     (t

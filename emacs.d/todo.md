@@ -1,6 +1,8 @@
 # To Do
 Install treemacs
 Either save on blur, or display unsaved buffers in a more obvious way?
+Balance colours a bit more.
+I like the 80 char line, can I get that??
 
 ## UI
 Change font for non-editor buffers?

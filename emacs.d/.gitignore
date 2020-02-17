@@ -1,3 +1,5 @@
+.cache/
+workspace/
 elpa/
 backups/
 auto-save-list/
