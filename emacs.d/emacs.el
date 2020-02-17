@@ -13,6 +13,9 @@
 ;; Highlight current line
 (global-hl-line-mode t)
 
+;; Automatically revert buffers when changed on disk
+(global-auto-revert-mode 1)
+
 ;;; Cursor
 ;; Make the cursor a line rather than a box
 (setq-default cursor-type 'bar)
