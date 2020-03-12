@@ -76,3 +76,9 @@
   ("M-p" projectile-switch-project   "switch project")
   ("M-s" projectile-ripgrep          "grep in project")
   )
+
+(defhydra hydra-treemacs (global-map "M-SPC M-t")
+	"Treemacs hydra"
+	("M-p" treemacs-projectile  "add projectile project")
+	("M-l" lsp-treemacs-symbols "list symbols")
+	("M-t" treemacs             "toggle treemacs"))

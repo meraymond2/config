@@ -46,7 +46,7 @@
 
 (use-package projectile
   :ensure t
-  :init 
+  :init
   (projectile-mode 1)
   (define-key projectile-mode-map (kbd "M-SPC p") 'projectile-command-map)
   (setq projectile-completion-system 'ivy)
@@ -56,3 +56,11 @@
   :ensure t
   :init
   (which-key-mode 1))
+
+(use-package treemacs
+  :ensure t
+  :defer)
+
+(use-package lsp-treemacs
+  :ensure t
+  :defer)
