@@ -2,7 +2,7 @@
   "editor.renderWhitespace": "all",
     "editor.rulers": [80],
     "files.trimTrailingWhitespace": true,
-    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "\"SauceCodePro Nerd Font Mono\", \"serif\"",
     "editor.fontSize": 16,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
@@ -42,15 +42,9 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "workbench.tree.indent": 16,
-      "ruby.format": "rubocop",
-      "ruby.codeCompletion": "rcodetools",
-      "ruby.intellisense": "rubyLocate",
-      "ruby.useLanguageServer": true,
       "editor.selectionClipboard": false,
       "editor.dragAndDrop": false,
       "workbench.iconTheme": "easy-icons",
       "workbench.colorTheme": "MomoDark",
-      "calva.fmt.formatAsYouType": false,
-      "calva.fmt.newIndentEngine": true,
-      "calva.fmt.removeConsecutiveBlankLines": true
+      "window.restoreWindows": "none"
 }
