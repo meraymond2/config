@@ -2,7 +2,6 @@
   "editor.renderWhitespace": "all",
     "editor.rulers": [80],
     "files.trimTrailingWhitespace": true,
-    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 16,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
@@ -49,8 +48,15 @@
       "editor.selectionClipboard": false,
       "editor.dragAndDrop": false,
       "workbench.iconTheme": "easy-icons",
-      "workbench.colorTheme": "MomoDark",
+      "workbench.colorTheme": "Little Yeti",
       "calva.fmt.formatAsYouType": false,
       "calva.fmt.newIndentEngine": true,
-      "calva.fmt.removeConsecutiveBlankLines": true
+      "calva.fmt.removeConsecutiveBlankLines": true,
+      "telemetry.enableTelemetry": false,
+      "telemetry.enableCrashReporter": false,
+      "window.restoreWindows": "none",
+      "files.hotExit": "off",
+      "workbench.startupEditor": "newUntitledFile",
+      "editor.fontLigatures": false,
+      "editor.fontFamily": "\"Sauce Code Pro Nerd Font Complete\", monospace, 'Droid Sans Fallback'"
 }
