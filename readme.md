@@ -43,6 +43,15 @@ Now it's ready for the Arch USB.
 
 If all goes well, it should boot ok. If not, double check the efi stuff.
 
+It might also be necessary to configure the boot loader. On my Asus and the Lenovo, the boot loader was the one with the blue menu (name?). The Dell doesn’t use that and my efi command above wouldn’t boot. I had to run `bootctl install` (bootctl itself is installed already with systemd), and then manually configure the entry. It creates its own efibootmgr entry, so I had to delete the old one.
+```
+~ >> cat /boot/loader/entries/arch.conf                                          
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+options root="LABEL=rootfs" rw
+```
+
 ---
 
 # Set up Arch
