@@ -30,7 +30,7 @@ Now it's ready for the Arch USB.
 4. Mount the root partition: `mount /dev/nvme0n1p3 /mnt` (replace with whichever one is the rootfs).
 5. Mount the boot partition: `mkdir /mnt/boot && mount /dev/nvme0n1p1 /mnt/boot` (replace with the boot partition).
 6. Turn on the swap: `swapon /dev/nvme0n1p2`
-7. Install the base package group: `pacstrap /mnt base`
+7. Install the base package group: `pacstrap /mnt base linux linux-firmware`
 8. Generate the fstab: `genfstab -U /mnt >> /mnt/etc/fstab`. I think that this basically records the mounts, so it can happen automatically on start.
 9. Change root into the new system: `arch-chroot /mnt`
 10. Set the time. `ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime && hwclock --systohc`.
