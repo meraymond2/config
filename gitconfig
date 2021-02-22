@@ -9,3 +9,6 @@
 	askPass = 
 	excludesfiles = ~/.gitignore_global
 	excludesfile = ~/.gitignore_global
+	editor = nano
+[init]
+	defaultBranch = develop

@@ -26,16 +26,17 @@ alias gst="git status"
 alias gb="git branch"
 alias gco="git checkout"
 alias gcd="git checkout develop"
-alias gcm="git checkout master"
+alias gcm="git checkout main"
 alias grb="git rebase"
 alias grbd="git rebase develop"
-alias grbm="git rebase master"
+alias grbm="git rebase main"
 alias grbid="git rebase -i develop"
-alias grbim="git rebase -i master"
+alias grbim="git rebase -i main"
 alias gcmsg="git commit -m"
 alias gd="git diff"
 alias gdt="git difftool"
 alias gf="git fetch"
+alias grbi="git rebase --interactive"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias grhh="git reset --hard"
@@ -55,19 +56,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.work-stuff" ]]; then
   source "${ZDOTDIR:-$HOME}/.work-stuff"
 fi
 
-export EDITOR=nvim
+export EDITOR=nano
 
-export EDITOR="emacsclient -t"                  # $EDITOR opens in terminal
-
-function em() {
-	emacsclient -c "$@" &
+function vsx() {
+    codium . & exit
 }
-
-function emx() {
-    emacsclient -c "$@" & exit
-}
-
-export GOPATH="$HOME/.go"
-export PATH=~/.npm-global/bin:$GOPATH/bin:$PATH
 
 alias snow="mpv ~/Videos/snow.mp4 --wid=0 --no-audio --loop &"
+
+# Fixes terminal cursor bug on Arch
+export LANG="en_GB.UTF-8"
