@@ -1,8 +1,0 @@
-.cache/
-workspace/
-elpa/
-backups/
-auto-save-list/
-.lsp-session-v1
-.lsp/
-projectile-bookmarks.eld

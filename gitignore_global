@@ -4,3 +4,6 @@ test.js
 .nix-gems/
 default.nix
 .tool-versions
+.lsp
+__pycache__
+**/.vscode/
