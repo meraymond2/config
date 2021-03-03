@@ -1,9 +1,0 @@
-export WINIT_HIDPI_FACTOR=1.0
-wmname LG3D
-udiskie &
-setxkbmap gb
-xsetroot -cursor_name left_ptr &
-autorandr -c
-feh --bg-max /home/michael/Pictures/quais.jpg
-# polybar main &
-exec xmonad
