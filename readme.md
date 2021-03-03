@@ -104,4 +104,4 @@ Just install jetbrains.jdk and replace the intellij java bin with a link to the 
 ### VSCode
 The only thing that vscode itself is necessary for is LiveShare. Otherwise VSCodium is fine.
 
-*TODO: vscode setup*
+In order to use the Live Share extension, it needs to be part of the VSCode derivation, I don't think it works if you just install both packages separately. There is a vscode.nix shell setup that can be used when you need Live Share or other special extensions.
