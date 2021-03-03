@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -77,6 +77,20 @@
   
   # Allow programmes to persist their settings
   programs.dconf.enable = true;
+
+  # Games
+  #programs.steam.enable = true;
+
+  #nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  #  "steam"
+  #  "steam-original"
+  #  "steam-runtime"
+  #]; 
+  # Steam's DNS is broken, so ping media.steampowered.com, and put that IP here.
+  #networking.extraHosts =
+  #''
+  #  62.24.251.18 client-download.steampowered.com
+  #'';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

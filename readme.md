@@ -63,6 +63,7 @@ Install core user software, with `nix-env -i <pckgs>`. A good starting list is
 - udiskie
 - unzip
 - vscodium
+- wireless-tools
 
 ### Configs
 You may need to create some dirs if the apps haven't been used yet.
