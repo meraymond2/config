@@ -13,3 +13,4 @@ include "%L"   # import the default Compose file for your locale
 <Multi_key> <r> <e> <a> <l>  : "ℝ"
 <Multi_key> <s> <i> <g>      : "Σ"
 <Multi_key> <z> <a> <h> <l>  : "ℤ"
+<Multi_key> <p> <t>          : "•"
