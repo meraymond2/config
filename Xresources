@@ -1,0 +1,30 @@
+XTerm*faceName: SauceCodePro Nerd Font
+XTerm*faceSize: 13
+XTerm*internalBorder: 24
+XTerm*Background: #333333
+XTerm*Foreground: #BCBCBC
+XTerm*Color0: #1c1c1c // black
+XTerm*Color1: #af0000 // red
+XTerm*Color2: #009f6b // green
+XTerm*Color3: #daa520 // yellow
+XTerm*Color4: #2e2d88 // dark blue
+XTerm*Color5: #cc397b // magenta
+XTerm*Color6: #00c5cd // cyan
+XTerm*Color7: #666666 // gray
+XTerm*Color8: #FF0000 // light gray
+XTerm*Color9: #FF6461 // light red
+XTerm*Color10: #00ffaf // light green
+XTerm*Color11: #ffd700 // light yellow
+XTerm*Color12: #00bfff // light blue
+XTerm*Color13: #fe4164 // light magenta
+XTerm*Color14: #08e8de // light cyan
+XTerm*Color15: #EEEEEE // white
+XTerm*vt100.scaleHeight: 1
+XTerm*VT100*selectToClipboard: true
+
+*VT100*translations:  #override \n\
+  Shift <Key>Home:    copy-selection(SELECT) \n\
+  Shift <Key>Insert:  copy-selection(SELECT) \n\
+  Ctrl Shift <Key>C:  copy-selection(SELECT) \n\
+  Ctrl Shift <Key>V:  insert-selection(SELECT)
+

@@ -13,7 +13,6 @@
       ],
       "editor.tabSize": 2,
       "files.autoSave": "onFocusChange",
-      "window.zoomLevel": 0,
       "html.autoClosingTags": false,
       "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -36,27 +35,33 @@
       "go.buildOnSave": "off",
       "go.formatTool": "gofmt",
       "go.useLanguageServer": true,
-      "debug.console.fontFamily": "Source Code Pro",
+      "debug.console.fontFamily": "\"Sauce Code Pro Nerd Font Complete\", monospace, 'Droid Sans Fallback'",
       "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "workbench.tree.indent": 16,
-      "ruby.format": "rubocop",
-      "ruby.codeCompletion": "rcodetools",
-      "ruby.intellisense": "rubyLocate",
-      "ruby.useLanguageServer": true,
+      "[python]": {
+        "editor.tabSize": 4,
+      },
       "editor.selectionClipboard": false,
       "editor.dragAndDrop": false,
       "workbench.iconTheme": "easy-icons",
-      "workbench.colorTheme": "Little Yeti",
-      "calva.fmt.formatAsYouType": false,
-      "calva.fmt.newIndentEngine": true,
-      "calva.fmt.removeConsecutiveBlankLines": true,
+      "workbench.colorTheme": "Atom One Dark",
       "telemetry.enableTelemetry": false,
       "telemetry.enableCrashReporter": false,
       "window.restoreWindows": "none",
       "files.hotExit": "off",
       "workbench.startupEditor": "newUntitledFile",
-      "editor.fontLigatures": false,
-      "editor.fontFamily": "\"Sauce Code Pro Nerd Font Complete\", monospace, 'Droid Sans Fallback'"
+      "editor.fontLigatures": "'calt' off, 'dlig' off",
+      "editor.fontFamily": "SauceCodePro Nerd Font Mono",
+      "scm.inputFontFamily": "\"Sauce Code Pro Nerd Font Complete\", monospace, 'Droid Sans Fallback'",
+      "editor.codeLensFontFamily": "SauceCodePro Nerd Font Mono",
+      "markdown.preview.fontFamily": "\"Sauce Code Pro Nerd Font Complete\", monospace, 'Droid Sans Fallback'",
+      "terminal.integrated.fontFamily": "\"Sauce Code Pro Nerd Font Complete\", monospace, 'Droid Sans Fallback'",
+      "idris.idrisPath": "idris2",
+      "idris.hoverAction": "Type At",
+      "security.workspace.trust.untrustedFiles": "open",
+      "idris.idris2Mode": true,
+      "idris.debugMode": true,
+      "window.zoomLevel": 1
 }
