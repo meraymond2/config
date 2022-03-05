@@ -1,6 +1,7 @@
 export WINIT_HIDPI_FACTOR=1.0
 udiskie &
 setxkbmap gb
+setxkbmap -option compose:ralt
 xsetroot -cursor_name left_ptr &
 autorandr -c
 feh --bg-max /home/michael/Pictures/quais.jpg
