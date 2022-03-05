@@ -101,6 +101,8 @@ Intellij products actually work pretty fine from /opt, with a shortcut in /usr/l
 
 Just install jetbrains.jdk and replace the intellij java bin with a link to the nix one. It looks something like `sudo ln -s /nix/store/fd7ys22m5j9dxxvn5qgz83dfmi88dgyn-jetbrains-jdk-11.0.7-b64/lib/openjdk/bin/java /opt/clion-2020.3.2/jbr/bin/java`. It's a little brittle, but not bad.
 
+Update: or just use the packages.
+
 ### VSCode
 The only thing that vscode itself is necessary for is LiveShare. Otherwise VSCodium is fine.
 
