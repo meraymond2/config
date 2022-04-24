@@ -44,6 +44,11 @@
     };
   };
 
+  # Set PowerButton behaviour, see `man logind.conf` for options.
+  services.logind.extraConfig = ''
+    HandlePowerKey=ignore
+  '';
+
   # Allow i3blocks to read hard-coded /etc path
   environment.pathsToLink = [ "/libexec" ];
 
@@ -61,7 +66,7 @@
     shell = pkgs.zsh;
   };
 
-  # List packages installed in system profile. 
+  # List packages installed in system profile.
   # Most packages can be installed at the user level without a rebuild.
   environment.systemPackages = with pkgs; [
     ntfs3g
@@ -74,7 +79,7 @@
   # https://search.nixos.org/options?channel=20.09&from=0&size=50&sort=relevance&query=programs
   # Enable zsh
   programs.zsh.enable = true;
-  
+
   # Allow programmes to persist their settings
   programs.dconf.enable = true;
 
@@ -85,7 +90,7 @@
   #  "steam"
   #  "steam-original"
   #  "steam-runtime"
-  #]; 
+  #];
   # Steam's DNS is broken, so ping media.steampowered.com, and put that IP here.
   #networking.extraHosts =
   #''
@@ -100,4 +105,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
 }
-
