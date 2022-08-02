@@ -10,7 +10,7 @@ border_bottom=2
 [cpu_usage]
 command=$HOME/.config/i3blocks/cpu_usage
 interval=10
-LABEL= 
+LABEL=
 T_WARN=50
 T_CRIT=80
 DECIMALS=2
@@ -35,6 +35,12 @@ interval=5
 markup=pango
 min_width=bat: ■■■■■
 border=#54ced6
+
+[volume]
+command=$HOME/.config/i3blocks/volume
+label=蓼
+interval=2
+border=#9980AA
 
 [time]
 label= 
