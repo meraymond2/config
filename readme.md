@@ -7,7 +7,7 @@ _To do: test and record dual-boot install instructions._
 
 It’s entirely possible to do everything from the minimal image, but partitioning the hard-drive from the command-line is a pain in the ass. Make a boot USB with something that has a nice graphical interface, and use Gparted to handle the partitions.
 
-_To do: I did the command line recently, and it wasn't godawful, so I can record
+_To do: I did the command line recently, and it wasn't godawful, so I can record_
 
 So, before you begin, make sure you have:
 1. A second laptop, to read the docs while you're installing on the main one.
@@ -36,7 +36,9 @@ setxkbmap gb # set the keyboard layout for X
 
 exec i3      # start i3
 ```
-If you want a desktop image, you can add feh there too. There is almost certainly a way to set the keyboard map in the Nix config, but I haven't gotten it to work yet.
+There is almost certainly a way to set the keyboard map in the Nix config, but I haven't gotten it to work yet.
+
+There is more to copy into that file, but some of it relies on other things being installed, see xinitrc_i3.
 
 ## Set up user-software
 Add channels for the user. If Nix doesn't find a channel it will fall back on the system packages, but it's convenient to be able to use unstable packages.
@@ -45,32 +47,45 @@ nix-channel --add https://nixos.org/channels/nixos-20.09 stable
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
 ```
 
-Install core user software, with `nix-env -i <pckgs>`. A good starting list is 
+Install core user software, with `nix-env -iA nixos.<pckg>`. A good starting list is 
 - acpi
 - alacritty
-- awscli
+- arandr
+- awscli2
 - breeze-gtk
+- cargo
+- cinnamon.nemo
 - feh
 - firefox
 - git
+- gnome.adwaita-icon-theme
+- jetbrains.clion
+- jetbrains.idea-community
 - jetbrains.jdk
 - leiningen
 - meld
 - moc
-- poetry
+- nodejs
+- reaper
 - rofi
+- rustc
+- rustfmt
+- scrot
 - sysstat
 - udiskie
+- units
 - unzip
 - vscodium
-- wireless-tools
+- wirelesstools
+
+_TODO: Look into tools to manage these._
 
 ### Configs
 You may need to create some dirs if the apps haven't been used yet.
 ```
 # i3
 cp i3 ~/.config/i3/config
-cp i3blocks/ ~/.config/i3blocks
+cp -r i3blocks/ ~/.config/i3blocks
 cp XCompose ~/.XCompose
 
 # zsh
