@@ -24,7 +24,7 @@ border=#9ec400
 
 [wireless]
 label= 
-command=[[ -z "$(iwgetid -r)" ]] || echo " $(iwgetid -r) "
+command=$HOME/.config/i3blocks/wifi_str
 interval=2
 border=#7a96da
 
