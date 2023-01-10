@@ -37,7 +37,7 @@ function prompt_michael_setup {
   zstyle ':prezto:module:git:info:keys' format 'prompt' '' 'rprompt' '%b%C%D'
 
   # Define prompts.
-  PROMPT='%F{$turquoise}${_prompt_michael_pwd}%f %B%F{$light_green}>>%f%b '
+  PROMPT='%F{$turquoise}${_prompt_michael_pwd}%f %B%F{$light_green}•%f%b '
   RPROMPT='${git_info:+${(e)git_info[rprompt]}} '
   SPROMPT='zsh: correct %F{$red}%R%f to %F{$light_green}%r%f [nyae]? '
 }
