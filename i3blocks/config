@@ -37,7 +37,7 @@ min_width=bat: ■■■■■
 border=#54ced6
 
 [volume]
-command=$HOME/.config/i3blocks/volume
+command=echo " $(pamixer --get-volume-human)"
 label=蓼
 interval=2
 border=#9980AA
