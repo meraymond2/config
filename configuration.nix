@@ -53,11 +53,17 @@
   environment.pathsToLink = [ "/libexec" ];
 
   # Enable patched dev fonts
-  fonts.fonts = with pkgs; [ nerdfonts ];
+  fonts.fonts = with pkgs; [ (nerdfonts.override { fonts = ["SourceCodePro"]; }) ];
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.michael = {
@@ -71,6 +77,11 @@
   environment.systemPackages = with pkgs; [
     ntfs3g
   ];
+
+  powerManagement.enable = true;
+
+  # Enable udisks, for mounting drives
+  services.udisks2.enable = true;
 
   # Enable docker
   virtualisation.docker.enable = true;
