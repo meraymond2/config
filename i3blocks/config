@@ -7,10 +7,15 @@ border_left=0
 border_right=0
 border_bottom=2
 
+[keyboard]
+command=$HOME/.config/i3blocks/keyboard
+interval=once
+border=#7777FF
+
 [cpu_usage]
 command=$HOME/.config/i3blocks/cpu_usage
 interval=10
-LABEL=
+LABEL=
 T_WARN=50
 T_CRIT=80
 DECIMALS=2
@@ -18,7 +23,7 @@ border=#feae55
 
 [memory]
 command=$HOME/.config/i3blocks/memory
-label=
+label=󰍛
 interval=30
 border=#9ec400
 
@@ -30,7 +35,7 @@ border=#7a96da
 
 [batterybar]
 command=$HOME/.config/i3blocks/batterybar
-label= 
+label= 󰁹
 interval=5
 markup=pango
 min_width=bat: ■■■■■
@@ -38,7 +43,7 @@ border=#54ced6
 
 [volume]
 command=echo " $(pamixer --get-volume-human)"
-label=蓼
+label=󰓃
 interval=2
 border=#9980AA
 
