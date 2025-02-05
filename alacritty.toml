@@ -1,0 +1,21 @@
+[colors.primary]
+background = "#333333"
+
+[font]
+size = 8.0
+
+[font.bold]
+family = "SauceCodePro Nerd Font"
+
+[font.bold_italic]
+family = "SauceCodePro Nerd Font"
+
+[font.italic]
+family = "SauceCodePro Nerd Font"
+
+[font.normal]
+family = "SauceCodePro Nerd Font"
+
+[window.padding]
+x = 15
+y = 15
