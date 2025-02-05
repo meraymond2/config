@@ -3,6 +3,7 @@ udiskie &
 setxkbmap gb
 setxkbmap -option compose:ralt
 xsetroot -cursor_name left_ptr &
+xmodmap ~/.Xmodmap
 autorandr -c
 feh --bg-max /home/michael/Pictures/quais.jpg
 exec i3
