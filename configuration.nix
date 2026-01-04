@@ -155,6 +155,7 @@
     acpi
     alacritty
     arandr
+    exfatprogs
     feh
     firefox
     gthumb
