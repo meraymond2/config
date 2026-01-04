@@ -96,23 +96,16 @@
     gtk = {
       enable = true;
       theme = {
-        name = "catppuccin-macchiato-standard-blue-dark";
-        package = pkgs.catppuccin-gtk.override {
-          accents = [ "blue" ];
-          size = "standard";
-          variant = "macchiato";
-        };
+        name = "Breeze-Dark";
+        package = pkgs.kdePackages.breeze-gtk;
       };
       iconTheme = {
-        name = "Papirus-Dark";
-        package = pkgs.catppuccin-papirus-folders.override {
-          flavor = "macchiato";
-          accent = "blue";
-        };
+        name = "Breeze-Dark";
+        package = pkgs.kdePackages.breeze-gtk;
       };
       cursorTheme = {
-        name = "Catppuccin-Macchiato-Dark-Cursors";
-        package = pkgs.catppuccin-cursors.macchiatoDark;
+        name = "breeze_cursors";
+        package = pkgs.kdePackages.breeze;
       };
       gtk3 = {
         extraConfig.gtk-application-prefer-dark-theme = true;
@@ -121,32 +114,27 @@
 
     home.pointerCursor = {
       gtk.enable = true;
-      name = "Catppuccin-Macchiato-Dark-Cursors";
-      package = pkgs.catppuccin-cursors.macchiatoDark;
+      name = "breeze_cursors";
+      package = pkgs.kdePackages.breeze;
       size = 16;
     };
 
     dconf.settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme = "Catppuccin-Macchiato-Standard-Blue-Dark";
+        gtk-theme = "Breeze-Dark";
         color-scheme = "prefer-dark";
       };
-
-      # For Gnome shell
-      "org/gnome/shell/extensions/user-theme" = {
-        name = "Catppuccin-Macchiato-Standard-Blue-Dark";
-      };
     };
 
-    qt = {
-      enable = true;
-      platformTheme = "qtct";
-      style.name = "kvantum";
-    };
+    # qt = {
+    #   enable = true;
+    #   platformTheme = "qtct";
+    #   style.name = "kvantum";
+    # };
 
-    xdg.configFile."Kvantum/kvantum.kvconfig".source = (pkgs.formats.ini { }).generate "kvantum.kvconfig" {
-      General.theme = "Catppuccin-Macchiato-Blue";
-    };
+    # xdg.configFile."Kvantum/kvantum.kvconfig".source = (pkgs.formats.ini { }).generate "kvantum.kvconfig" {
+    #   General.theme = "Catppuccin-Macchiato-Blue";
+    # };
 
     services.udiskie = {
       enable = true;
