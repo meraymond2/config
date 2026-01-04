@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -36,24 +37,25 @@
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
-    libinput.enable = true; # touchpad support, laptop only
     windowManager.i3 = {
       enable = true;
-      package = pkgs.i3-gaps;
       extraPackages = with pkgs; [ i3blocks ];
     };
   };
 
+  # touchpad support, laptop only
+  services.libinput.enable = true;
+
   # Set PowerButton behaviour, see `man logind.conf` for options.
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-  '';
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+  };
 
   # Allow i3blocks to read hard-coded /etc path
   environment.pathsToLink = [ "/libexec" ];
 
   # Enable patched dev fonts
-  fonts.fonts = with pkgs; [ (nerdfonts.override { fonts = ["SourceCodePro"]; }) ];
+  fonts.packages = [ pkgs.nerd-fonts.sauce-code-pro ];
 
   # Enable sound.
   security.rtkit.enable = true;
@@ -65,6 +67,12 @@
     jack.enable = true;
   };
 
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.michael = {
     isNormalUser = true;
@@ -72,10 +80,106 @@
     shell = pkgs.zsh;
   };
 
+  home-manager.users.michael = { pkgs, ... }: {
+    home.stateVersion = "25.11";
+
+    home.packages = with pkgs; [
+      (catppuccin-kvantum.override {
+        accent = "blue";
+        variant = "macchiato";
+      })
+      libsForQt5.qtstyleplugin-kvantum
+      libsForQt5.qt5ct
+      papirus-folders
+    ];
+
+    gtk = {
+      enable = true;
+      theme = {
+        name = "catppuccin-macchiato-standard-blue-dark";
+        package = pkgs.catppuccin-gtk.override {
+          accents = [ "blue" ];
+          size = "standard";
+          variant = "macchiato";
+        };
+      };
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.catppuccin-papirus-folders.override {
+          flavor = "macchiato";
+          accent = "blue";
+        };
+      };
+      cursorTheme = {
+        name = "Catppuccin-Macchiato-Dark-Cursors";
+        package = pkgs.catppuccin-cursors.macchiatoDark;
+      };
+      gtk3 = {
+        extraConfig.gtk-application-prefer-dark-theme = true;
+      };
+    };
+
+    home.pointerCursor = {
+      gtk.enable = true;
+      name = "Catppuccin-Macchiato-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.macchiatoDark;
+      size = 16;
+    };
+
+    dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        gtk-theme = "Catppuccin-Macchiato-Standard-Blue-Dark";
+        color-scheme = "prefer-dark";
+      };
+
+      # For Gnome shell
+      "org/gnome/shell/extensions/user-theme" = {
+        name = "Catppuccin-Macchiato-Standard-Blue-Dark";
+      };
+    };
+
+    qt = {
+      enable = true;
+      platformTheme = "qtct";
+      style.name = "kvantum";
+    };
+
+    xdg.configFile."Kvantum/kvantum.kvconfig".source = (pkgs.formats.ini { }).generate "kvantum.kvconfig" {
+      General.theme = "Catppuccin-Macchiato-Blue";
+    };
+
+    services.udiskie = {
+      enable = true;
+      settings = {
+        # workaround for
+        # https://github.com/nix-community/home-manager/issues/632
+        program_options = {
+            # replace with your favorite file manager
+            file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
+        };
+      };
+    };
+  };
+
   # List packages installed in system profile.
   # Most packages can be installed at the user level without a rebuild.
   environment.systemPackages = with pkgs; [
+    acpi
+    alacritty
+    arandr
+    feh
+    firefox
+    gthumb
+    helix
+    meld
     ntfs3g
+    rofi
+    sysstat
+    units
+    unzip
+    wget
+    wine
+    wirelesstools
   ];
 
   powerManagement.enable = true;
@@ -86,8 +190,14 @@
   # Enable docker
   virtualisation.docker.enable = true;
 
+  # Enable kvm utils
+  #virtualisation.libvirtd.enable = true;
+
   # Programs are special packages that need more configuration than simple packages.
   # https://search.nixos.org/options?channel=20.09&from=0&size=50&sort=relevance&query=programs
+
+  programs.git.enable = true;
+
   # Enable zsh
   programs.zsh.enable = true;
 
